@@ -16,11 +16,8 @@ class ProdutoController extends Controller
     {
         //return "index";
 
-        $nome = 'Jose Pedro';
-        $type = 25;
-        $elemento = "<h1>Testando e apreendendo...</h1>";
-
-        return view('site.home', compact('nome', 'type', 'elemento'));
+        $produtos = Produto::all();
+        return view('site.home', compact('produtos'));
 
         /* return view('site.home'); */
 
