@@ -17,10 +17,12 @@ class ProdutoController extends Controller
         //return "index";
 
         $nome = 'Jose Pedro';
-        $idade = 25;
+        $type = 25;
         $elemento = "<h1>Testando e apreendendo...</h1>";
 
-        return view('site/empresa', compact('nome', 'idade', 'elemento'));
+        return view('site.home', compact('nome', 'type', 'elemento'));
+
+        /* return view('site.home'); */
 
     }
 
