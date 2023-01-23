@@ -18,6 +18,11 @@ class SiteController extends Controller
         return view('site.home', compact('produtos'));
 
         /* return view('site.home'); */
+    }
 
+    public function details($slug){
+        $produto  = Produto::where('slug', $slug)->first();
+
+        return view('site.details', compact('produto'));
     }
 }
