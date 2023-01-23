@@ -19,7 +19,7 @@ class Produtos extends Migration
             $table->string('descricao');
             $table->double('preco', 20, 2);
             $table->string('slug');
-            $table->string('imagem');
+            $table->string('imagem')->nullabel();
 
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

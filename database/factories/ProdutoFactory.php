@@ -17,9 +17,7 @@ class ProdutoFactory extends Factory
     public function definition()
     {
         $nome = $this->faker->unique()->sentence();
-
         return [
-            //
             'nome' => $nome,
             'descricao' => $this->faker->paragraph(),
             'preco' => $this->faker->randomNumber(2),
