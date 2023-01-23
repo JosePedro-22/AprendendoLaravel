@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\SiteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +16,8 @@ use App\Http\Controllers\ProdutoController;
 */
 
 Route::resource('produtos', ProdutoController::class);
-
-/* Route::get('/', [ProdutoController::class, 'index'])->name('produto.index');
-
+Route::get('/', [SiteController::class, 'index'])->name('site.index');
+/*
 Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show'); */
 /* Route::get('/empresa', function () {
     return view('site/empresa');
