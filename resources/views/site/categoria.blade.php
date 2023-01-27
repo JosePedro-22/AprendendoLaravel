@@ -3,7 +3,7 @@
 @section('conteudo')
 
 <div class="row container">
-    <h3>Caregoria: </h3>
+    <h5>Caregoria: {{$categoria}}</h5>
     @foreach ($produtos as $produto)
         <div class="row container">
             <div class="col s12 m3">
