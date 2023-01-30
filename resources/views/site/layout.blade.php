@@ -23,7 +23,7 @@
             <ul id="nav-mobile" class="left ">
             <li><a href="{{ route("site.index")}}">Home</a></li>
             <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Categoria<i class="material-icons right">expand_more</i></a></li>
-            <li><a href="badges.html">Carrinho</a></li>
+            <li><a href="{{ route("site.carrinho")}}">Carrinho</a></li>
             {{-- <li><a href="collapsible.html">JavaScript</a></li> --}}
             </ul>
         </div>
