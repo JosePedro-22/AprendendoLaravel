@@ -23,6 +23,7 @@ Route::get('/categoria/{id}', [SiteController::class, 'categoria'])->name('site.
 
 Route::get('/carrinho', [CarrinhoController::class, 'carrinhoList'])->name('site.carrinho');
 Route::post('/carrinho', [CarrinhoController::class, 'adicionaCarrinho'])->name('site.addcarrinho');
+Route::post('/remove', [CarrinhoController::class, 'removeCarrinho'])->name('site.removecarrinho');
 /*
 Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show'); */
 /* Route::get('/empresa', function () {

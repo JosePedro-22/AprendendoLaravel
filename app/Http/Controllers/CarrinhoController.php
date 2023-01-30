@@ -24,7 +24,11 @@ class CarrinhoController extends Controller
         ]);
 
         return redirect()->route('site.carrinho')->with('sucesso','Produto adicionado ao carrinho com sucesso!');
+    }
 
+    public function removeCarrinho(Request $request){
+        \Cart::remove($request->id);
+        return redirect()->route('site.carrinho')->with('sucesso','Produto removido com sucesso!');
     }
 
 
