@@ -20,10 +20,14 @@
     <nav class="green">
         <div class="nav-wrapper container">
             <a href="#" class="brand-logo center">Laravel</a>
-            <ul id="nav-mobile" class="left ">
-            <li><a href="{{ route("site.index")}}">Home</a></li>
-            <li><a class='dropdown-trigger' href='#' data-target='dropdown1'>Categoria<i class="material-icons right">expand_more</i></a></li>
-            <li><a href="{{ route("site.carrinho")}}">Carrinho</a></li>
+            <ul id="nav-mobile" class="left">
+                <li><a href="{{ route("site.index")}}">Home</a></li>
+                <li>
+                    <a class='dropdown-trigger' data-target='dropdown1'>Categoria
+                        <i class="material-icons right">expand_more</i>
+                    </a>
+                </li>
+                <li><a href="{{ route("site.carrinho")}}">Carrinho<span class="new badge blue" data-badge-caption="">{{\Cart::getContent()->count()}}</span></a></li>
             {{-- <li><a href="collapsible.html">JavaScript</a></li> --}}
             </ul>
         </div>
