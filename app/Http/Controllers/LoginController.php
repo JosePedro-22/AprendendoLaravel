@@ -12,6 +12,10 @@ class LoginController extends Controller
             [
                 'email' => ['required','email'],
                 'password' => ['required'],
+            ], [
+                'email.required' => 'O campo email é obrigatório.',
+                'email.email' => 'Email inválido.',
+                'password.required' => 'O campo password é obrigatório.',
             ]
         );
 
