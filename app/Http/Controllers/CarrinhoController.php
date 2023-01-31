@@ -34,12 +34,12 @@ class CarrinhoController extends Controller
     public function atualizaCarrinho(Request $request){
         \Cart::update($request->id, [
             'quantity'=>[
-                'realtive' => false,
+                'relative' => false,
                 'value' => $request->quantity
 
             ],
         ]);
-
+        return redirect()->route('site.carrinho')->with('sucesso','Produto atualizado com sucesso!');
     }
 
 }
