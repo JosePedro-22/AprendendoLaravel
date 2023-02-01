@@ -26,4 +26,11 @@ class LoginController extends Controller
             return redirect()->back()->with('erro', 'Email ou senha inválidos');
         }
     }
+
+    public  function logout(Request $request){
+        Atuh::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerate();
+        return redirect(route('site.index'));
+    }
 }
