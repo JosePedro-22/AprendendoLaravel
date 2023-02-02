@@ -8,18 +8,10 @@
                 <div class="card">
                     <div class="card-image">
                     <img src="{{$produto->imagem }}">
-                        @can('verProduto', $produto);
-
-                        @else
-
-                        @endcan
-
-                        @cannot
-                        @else
                         <a href="{{route('site.details', $produto->slug)}}" class="btn-floating halfway-fab waves-effect waves-light red">
                             <i class="material-icons">visibility</i>
                         </a>
-                        @endcannot
+
                     </div>
                     <div class="card-content">
                         <span class="card-title">{{Str::limit($produto->nome, 9, '...')}}</span>

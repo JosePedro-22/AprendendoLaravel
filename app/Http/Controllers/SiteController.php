@@ -24,8 +24,14 @@ class SiteController extends Controller
         $produto  = Produto::where('slug', $slug)->first();
 
         // Gate::authorize('ver-produto', $produto);
-        $this->authorize('verProduto', $produto);
+        // $this->authorize('verProduto', $produto);
 
+        if(Gates::allows('verProduto', $produto)){
+            return view('site.details', compact('produto'));
+        }
+        if(Gates::denies('verProduto', $produto)){
+            return redirect()->route('site.index');
+        }
         return view('site.details', compact('produto'));
     }
 
