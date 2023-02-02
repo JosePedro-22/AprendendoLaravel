@@ -26,10 +26,10 @@ class SiteController extends Controller
         // Gate::authorize('ver-produto', $produto);
         // $this->authorize('verProduto', $produto);
 
-        if(Gates::allows('verProduto', $produto)){
+        if(auth()->user()->can('verProduto', $produto)){
             return view('site.details', compact('produto'));
         }
-        if(Gates::denies('verProduto', $produto)){
+        if(auth()->user()->cannot('verProduto', $produto)){
             return redirect()->route('site.index');
         }
         return view('site.details', compact('produto'));
