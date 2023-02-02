@@ -4,7 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
-
+use App\Models\User;
+use App\Models\Produto;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -25,6 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        Gate::define('ver-produto', function (User $user, Produto $produto) {
+            return $user->id == $produto->user_id;
+        });
         //
     }
 }
