@@ -16,11 +16,11 @@ class ProdutoController extends Controller
     {
         //return "index";
 
-        /* $produtos = Produto::all(); */
-        $produtos = Produto::paginate(2);
-        return view('site.home', compact('produtos'));
+        $produtos = Produto::all();
+/*         $produtos = Produto::paginate(2);
+        return view('site.home', compact('produtos')); */
 
-        /* return view('site.home'); */
+        return view('admin.produtos', compact('produtos'));
 
     }
 
