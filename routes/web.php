@@ -38,6 +38,7 @@ Route::get('/register', [UserController::class, 'create'])->name('login.create')
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'checkemail']);
 Route::get('/admin/produtos', [ProdutoController::class, 'index'])->name('admin.produtos');
+Route::delete('/admin/produto/delete/{id}', [ProdutoController::class, 'destroy'])->name('admin.delete');
 /*
 Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show'); */
 /* Route::get('/empresa', function () {

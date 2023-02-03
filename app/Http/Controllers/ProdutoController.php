@@ -15,11 +15,9 @@ class ProdutoController extends Controller
     public function index()
     {
         //return "index";
-
-        $produtos = Produto::all();
-/*         $produtos = Produto::paginate(2);
+        /*$produtos = Produto::paginate(2);
         return view('site.home', compact('produtos')); */
-
+        $produtos = Produto::paginate(5);
         return view('admin.produtos', compact('produtos'));
 
     }
@@ -88,5 +86,8 @@ class ProdutoController extends Controller
     public function destroy($id)
     {
         //
+        $produto = Produto::find($id);
+        $produto->delete();
+        return redirect()->route('admin.produtos');
     }
 }
