@@ -9,8 +9,9 @@
     </div>
     @include('admin.produtos.create')
 
-    <div class="row container crud">
 
+    <div class="row container crud">
+        @include('admin.includes.mensagens')
             <div class="row titulo ">
               <h1 class="left">Produtos</h1>
               <span class="right chip">{{$produtos->count()}} produtos exibidos nesta pagina</span>
