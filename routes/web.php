@@ -37,7 +37,9 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('login.logout');
 Route::get('/register', [UserController::class, 'create'])->name('login.create');
 
 Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard')->middleware(['auth', 'checkemail']);
-
+Route::get('/admin/produtos', function(){
+    return view('admin.produtos');
+})->name('admin.produtos');
 /*
 Route::get('/produto/{id?}', [ProdutoController::class, 'show'])->name('produto.show'); */
 /* Route::get('/empresa', function () {
